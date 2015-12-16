@@ -1,0 +1,9 @@
+<h1>Showing selected node_types</h1>
+<p>
+  Title: <%= @node_type.name %>
+</p>
+<p>
+  Description: <%= @node_type.description %>
+</p>
+<%= link_to "Edit this node_type", edit_node_type_path(@node_type) %> |
+<%= link_to "Back to node_types listing", node_types_path %>

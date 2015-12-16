@@ -1,0 +1,46 @@
+<% if @node_type.errors.any? %>
+  <h2>The following errors prevented the node_type from getting created</h2>
+  <ul>
+  <% @node_type.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+<div class='row'>
+  <div class='col-xs-12'>
+    <%= form_for(@node_type, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :name %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_field :name, class: "form-control", placeholder: "Title of node_type", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :description %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Body of node_type" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :downloaded %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.check_box :downloaded, class: "form-control", placeholder: "Title of node_type", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= f.submit class: 'btn btn-primary btn-lg' %>
+        </div>
+      </div>
+    <% end %>
+    <div class="col-xs-4 col-xs-offset-4">
+      [ <%= link_to "Cancel request and return to node_types listing", node_types_path %> ]
+    </div>
+  </div>
+</div>

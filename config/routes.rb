@@ -8,6 +8,23 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
 
   resources :articles
+  resources :sites
+  resources :nodes
+  resources :node_messages
+  resources :node_message_parrameters
+  resources :node_message_types
+  resources :node_types
+  resources :value_types
+  resources :comms_emails
+  resources :comms_rule_details
+  resources :comms_rules
+  resources :comms_sms
+  resources :comms_types
+  resources :comms_web_services
+  resources :group_rules
+  resources :rules
+  resources :workflows
+  resources :group_rule_details   
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

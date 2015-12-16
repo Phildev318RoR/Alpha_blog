@@ -1,0 +1,19 @@
+<h1>Listing all node_types</h1>
+<p>
+  <%= link_to "Create new node_type", new_node_type_path %>
+</p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <% @node_types.each do |node_type| %>
+    <tr>
+      <td><%= node_type.name %></td>
+      <td><%= node_type.description %></td>
+      <td><%= link_to 'Edit |', edit_node_type_path(node_type) %> </td>
+      <td><%= link_to ' Show |', node_type_path(node_type) %> </td>
+      <td><%= link_to ' Delete', node_type_path(node_type), method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+  <% end %>
+</table>
