@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   resources :workflows
   resources :group_rule_details   
 
+  get 'hello_message/wsdl'
+  post 'hello_message/api'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
