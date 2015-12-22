@@ -25,6 +25,12 @@ Rails.application.routes.draw do
   resources :rules
   resources :workflows
   resources :group_rule_details   
+  
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
 
   get 'hello_message/wsdl'
   post 'hello_message/api'
