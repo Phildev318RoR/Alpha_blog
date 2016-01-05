@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
     uniqueness: { case_sensitive: false },
     format: { with: VALID_EMAIL_REGEX }
   has_many :articles
+  has_secure_password
   before_save { self.email = email.downcase }
 end
